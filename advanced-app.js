@@ -7,64 +7,13 @@ const gameStartUp = () => {
     const scoreDisplay = document.getElementById('score');
     const namedStates = [];
 
-    const states = {
-        MA: "massachusetts",
-        MN: "minnesota",
-        MT: "montana",
-        ND: "north dakota",
-        HI: "hawaii",
-        ID: "idaho",
-        WA: "washington",
-        AZ: "arizona",
-        CA: "california",
-        CO: "colorado",
-        NV: "nevada",
-        NM: "new mexico",
-        OR: "oregon",
-        UT: "utah",
-        WY: "wyoming",
-        AR: "arkansas",
-        IA: "iowa",
-        KS: "kansas",
-        MO: "missouri",
-        NE: "nebraska",
-        OK: "oklahoma",
-        SD: "south dakota",
-        LA: "louisiana",
-        TX: "texas",
-        CT: "connecticut",
-        NH: "new hampshire",
-        RI: "rhode island",
-        VT: "vermont",
-        AL: "alabama",
-        FL: "florida",
-        GA: "georgia",
-        MS: "mississippi",
-        SC: "south carolina",
-        IL: "illinois",
-        IN: "indiana",
-        KY: "kentucky",
-        NC: "north carolina",
-        OH: "ohio",
-        TN: "tennessee",
-        VA: "virginia",
-        WI: "wisconsin",
-        WV: "west virginia",
-        DE: "delware",
-        DC: "district of columbia",
-        MD: "maryland",
-        NJ: "new jersey",
-        NY: "new york",
-        PA: "pennsylvania",
-        ME: "maine",
-        MI: "michigan",
-        AK: "alaska"
-    }
+    import stateData from "states.js";
 
     const getKeyByValue = (object, value) => 
     Object.keys(object).find(key => object[key] === value);
 
     const result = getKeyByValue(states,"a");
+    // if it doesn't find a state it will return undefined
 
     console.log(result);
 
