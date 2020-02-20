@@ -6,13 +6,21 @@
 }
 
 body {
+  font-family: 'Courier New', Courier, monospace;
+  width: 100vw;
   height: 100vh;
-  background-color: lightblue;
-  color: navy;
+  font-size: 15px;
+  background-color: seashell;
 }
 
 h1 {
-  font-size: 40px;
+  text-align: center;
+  font-size: 4em;
+  background-color: grey;
+  color: white;
+}
+
+p {
   padding: 10px;
 }
 
@@ -20,21 +28,18 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 10px;
 }
 
 .intro input {
-  height: 20px;
-  width: 200px;
-}
-
-.intro button {
-  height: 25px;
-  width: 50px;
-  margin-left: 10px;
+  height: 40px;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid grey;
 }
 
 .intro .form {
@@ -46,7 +51,7 @@ h1 {
           justify-content: space-evenly;
 }
 
-.intro .score p {
+.intro p {
   font-size: 30px;
 }
 
@@ -54,10 +59,12 @@ h1 {
   position: relative;
   width: 1000px;
   height: 600px;
+  padding: 10px;
+  margin: auto;
 }
 
 .state {
-  fill: white;
+  fill: lightsteelblue;
 }
 
 .state:hover {
