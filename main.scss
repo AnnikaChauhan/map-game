@@ -5,30 +5,35 @@
 }
 
 body {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100vw;
     height: 100vh;
-    background-color: lightblue;
-    color: navy;
+    font-size: 15px;
+    background-color: seashell;
 }
 
 h1 {
-    font-size: 40px;
+    text-align: center;
+    font-size: 4em;
+    background-color: grey;
+    color: white;
+}
+
+p {
     padding: 10px;
 }
 
 .intro {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 10px;
 
     input {
-        height: 20px;
-        width: 200px;
-    }
-
-    button {
-        height: 25px;
-        width: 50px;
-        margin-left: 10px;
+        height: 40px;
+        width: 300px;
+        font-size: 20px;
+        border-radius: 5px;
+        border: 2px solid grey;
     }
 
     .form {
@@ -36,7 +41,7 @@ h1 {
         justify-content: space-evenly;
     }
 
-    .score p {
+    p {
         font-size: 30px;
     }
 }
@@ -45,10 +50,12 @@ h1 {
     position: relative;
     width: 1000px;
     height: 600px;
+    padding: 10px;
+    margin: auto;
 }
 
 .state {
-    fill: white;
+    fill: lightsteelblue;
 }
 
 .state:hover {

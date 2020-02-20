@@ -11,16 +11,18 @@
 </head>
 
 <body>
+    <h1>Guess the State!</h1>
+    <p>Guess the state! You have 10 minutes to guess all the states, input the name of the state into the box and hit enter. If it matches a state, it will highlight the state green, if not it will tell you. Time will begin when you submit your first state. Good luck!</p>
     <div class="intro">
-        <h1>Guess the State!</h1>
         <div class="form">
-            <input type="text" name="inputCountry" id="inputCountry">
-            <button id="submit">Submit</button>
+            <input type="text" name="inputCountry" id="inputCountry" placeholder=" Type here & click enter">
             <p id="matchNot"></p>
         </div>
+        <div class="time">
+            <p>Time Remaining:<span id="timeRemaining"></span></p>
+        </div>
         <div class="score">
-            <p>Score:</p>
-            <p id="score"></p>
+            <p>Score:<span id="score">0</span></p>
         </div>
     </div>
     <div id="container">
