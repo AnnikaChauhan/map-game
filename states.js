@@ -1,3 +1,4 @@
+//provided by site with SVG
 const states = {
     MA: "massachusetts",
     MN: "minnesota",
