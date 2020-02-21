@@ -2,7 +2,6 @@ import stateData from "./states.js";
 //console.log(stateData);
 
 const gameStartUp = () => {
-    let time = 0;
     let score = 0;
     const allStates = document.querySelectorAll('.states');
     const input = document.getElementById('inputCountry');
@@ -13,7 +12,7 @@ const gameStartUp = () => {
     const getKeyByValue = (object, value) => 
     Object.keys(object).find(key => object[key] === value);
 
-    const findCountry = () => {
+    const findState = () => {
         let stateNamed = (input.value).toLowerCase();
         let result = getKeyByValue(stateData, stateNamed);
         if(namedStates.includes(stateNamed)) {
@@ -39,13 +38,19 @@ const gameStartUp = () => {
         // else if the time gets to the end and score is less than 52 then lose, with the option to reset
         if(score === 5){
             matchNot.innerText = "You win!!";
+            matchNot.innerHTML += "<button class='restart'>Restart</button>";
         }
+    }
+
+    const initiateTimer = () => {
+        let timeNow = new Date().getTime;
+        
     }
 
     document.onkeypress = () => {
         if(event.which === 13){
             //this should initiate the timer
-            findCountry();
+            findState();
             //console.log(score);
             determineWin();
         }
