@@ -39,6 +39,15 @@ p {
     .form {
         display: flex;
         justify-content: space-evenly;
+
+        .restart {
+            height: 30px;
+            width: 100px;
+            font-size: 25px;
+            border-radius: 5px;
+            border: 2px solid grey;
+            cursor: pointer;
+        }
     }
 
     p {
@@ -61,4 +70,9 @@ p {
 .state:hover {
     cursor: pointer;
     fill: lightgrey;
+}
+
+footer {
+    font-weight: bold;
+    text-align: center;
 }

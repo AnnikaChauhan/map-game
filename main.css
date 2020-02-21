@@ -51,6 +51,15 @@ p {
           justify-content: space-evenly;
 }
 
+.intro .form .restart {
+  height: 30px;
+  width: 100px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  cursor: pointer;
+}
+
 .intro p {
   font-size: 30px;
 }
@@ -70,5 +79,10 @@ p {
 .state:hover {
   cursor: pointer;
   fill: lightgrey;
+}
+
+footer {
+  font-weight: bold;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
