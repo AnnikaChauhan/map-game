@@ -7,6 +7,7 @@ const gameStartUp = () => {
     const input = document.getElementById('inputCountry');
     const matchNot = document.getElementById('matchNot');
     const scoreDisplay = document.getElementById('score');
+    const restart = document.getElementById('restart');
     const namedStates = [];
 
     const getKeyByValue = (object, value) => 
@@ -18,9 +19,11 @@ const gameStartUp = () => {
         if(namedStates.includes(stateNamed)) {
             matchNot.innerText = "You've already said this!";
             matchNot.style.color = "black";
+            input.value = "";
         } else if (result === undefined){
             matchNot.innerText = `"${stateNamed}" is not a state!`;
             matchNot.style.color = "red";
+            input.value = "";
         } else {
             matchNot.innerText = "It's a match!"
             matchNot.style.color = "green";
@@ -29,18 +32,20 @@ const gameStartUp = () => {
             let colorIn = document.getElementById(result);
             colorIn.style.fill = "green";
             stateNamed = "";
+            input.value = "";
         }
         scoreDisplay.innerText = score;   
     }
 
     const determineWin = () => {
-        //if score is 52 and time is less than the allotted time then win
+        //if score is 52 and time is less than the allotted time then win with option to reset
         // else if the time gets to the end and score is less than 52 then lose, with the option to reset
-        if(score === 5){
+        if(score === 10){
             matchNot.innerText = "You win!!";
-            matchNot.innerHTML += "<button class='restart'>Restart</button>";
         }
     }
+
+    
 
     const initiateTimer = () => {
         let timeNow = new Date().getTime;
@@ -51,17 +56,13 @@ const gameStartUp = () => {
         if(event.which === 13){
             //this should initiate the timer
             findState();
-            //console.log(score);
             determineWin();
         }
     }
 
-    
 
-
-    const resetGame = () => {
-        allStates.style.fill = "white";
-        //also reset timer
+    restart.onclick = () => {
+        location.reload();
     }
 
 }

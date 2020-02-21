@@ -39,15 +39,6 @@ p {
     .form {
         display: flex;
         justify-content: space-evenly;
-
-        .restart {
-            height: 30px;
-            width: 100px;
-            font-size: 25px;
-            border-radius: 5px;
-            border: 2px solid grey;
-            cursor: pointer;
-        }
     }
 
     p {
@@ -70,6 +61,19 @@ p {
 .state:hover {
     cursor: pointer;
     fill: lightgrey;
+}
+
+section {
+    text-align: center;
+}
+
+#restart {
+    height: 30px;
+    width: 400px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: 1px solid red;
+    cursor: pointer;
 }
 
 footer {
