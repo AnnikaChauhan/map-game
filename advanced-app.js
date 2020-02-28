@@ -47,7 +47,7 @@ const gameStartUp = () => {
     }
 
     const initiateTimer = () => {
-        const minutesAllowed = 2;
+        const minutesAllowed = 10;
         const millisecondsAllowed = minutesAllowed * 60000;
         let millisecondsLeft = millisecondsAllowed;
         const timer = setInterval(() => {
