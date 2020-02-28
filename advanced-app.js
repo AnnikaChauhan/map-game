@@ -1,6 +1,5 @@
 import stateData from "./states.js";
 //console.log(stateData);
-
 const gameStartUp = () => {
     let score = 0;
     let number = 0;
@@ -39,20 +38,19 @@ const gameStartUp = () => {
         scoreDisplay.innerText = score;
     }
 
-    const determineWin = (timer) => {
+    const determineWin = () => {
         //if score is 52 and time is less than the allotted time then win with option to reset
         // else if the time gets to the end and score is less than 52 then lose, with the option to reset
         if (score === 10) {
             matchNot.innerText = "You win!!";
-            clearInterval(timer);
         }
     }
 
     const initiateTimer = () => {
-        const minutesAllowed = 10;
+        const minutesAllowed = 2;
         const millisecondsAllowed = minutesAllowed * 60000;
         let millisecondsLeft = millisecondsAllowed;
-        const time = setInterval(() => {
+        const timer = setInterval(() => {
             if (millisecondsLeft > 0) {
                 millisecondsLeft -= 1000;
                 let mins = Math.floor((millisecondsLeft) % (1000 * 60 * 60) / (1000 * 60));
@@ -63,30 +61,22 @@ const gameStartUp = () => {
 
     }
 
-
     document.onkeypress = () => {
         if (event.which === 13) {
             number += 1;
             if (number === 1) {
                 initiateTimer();
                 findState();
-                determineWin();
             } else {
                 findState();
                 determineWin();
             }
-
         }
     }
-
-
 
     restart.onclick = () => {
         location.reload();
     }
-
-
-
 
 }
 
