@@ -42,7 +42,7 @@ const states = {
     VA: "virginia",
     WI: "wisconsin",
     WV: "west virginia",
-    DE: "delware",
+    DE: "delaware",
     DC: "district of columbia",
     MD: "maryland",
     NJ: "new jersey",
