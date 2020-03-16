@@ -47,7 +47,7 @@ const gameStartUp = () => {
                 let mins = Math.floor((millisecondsLeft) % (1000 * 60 * 60) / (1000 * 60));
                 let secs = Math.floor((millisecondsLeft % (1000 * 60)) / 1000);
                 timeRemaining.innerText = mins + " min " + secs + " sec";
-                if (score === 52) {
+                if (score === 50) {
                     matchNot.innerText = "You win, restart to play again!";
                     matchNot.style.color = "green";
                     input.style.display = "none";
