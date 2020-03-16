@@ -3,7 +3,6 @@ import stateData from "./states.js";
 const gameStartUp = () => {
     let score = 0;
     let number = 0;
-    const allStates = document.querySelectorAll('.states');
     const timeRemaining = document.getElementById('timeRemaining');
     const input = document.getElementById('inputCountry');
     const matchNot = document.getElementById('matchNot');
@@ -38,15 +37,7 @@ const gameStartUp = () => {
         scoreDisplay.innerText = score;
     }
 
-    const determineWin = () => {
-        //if score is 52 and time is less than the allotted time then win with option to reset
-        // else if the time gets to the end and score is less than 52 then lose, with the option to reset
-        if (score === 10) {
-            matchNot.innerText = "You win!!";
-        }
-    }
-
-    const initiateTimer = () => {
+    const initiateTimerAndSetWinConditions = () => {
         const minutesAllowed = 10;
         const millisecondsAllowed = minutesAllowed * 60000;
         let millisecondsLeft = millisecondsAllowed;
@@ -56,20 +47,29 @@ const gameStartUp = () => {
                 let mins = Math.floor((millisecondsLeft) % (1000 * 60 * 60) / (1000 * 60));
                 let secs = Math.floor((millisecondsLeft % (1000 * 60)) / 1000);
                 timeRemaining.innerText = mins + " min " + secs + " sec";
+                if (score === 52) {
+                    matchNot.innerText = "You win, restart to play again!";
+                    matchNot.style.color = "green";
+                    input.style.display = "none";
+                    clearInterval(timer);
+                }
+            } else {
+                matchNot.innerText = "Time is up, restart the game to play again!";
+                matchNot.style.color = "red";
+                input.style.display = "none";
+                clearInterval(timer);
             }
         }, 1000);
-
     }
 
     document.onkeypress = () => {
         if (event.which === 13) {
             number += 1;
             if (number === 1) {
-                initiateTimer();
+                initiateTimerAndSetWinConditions();
                 findState();
             } else {
                 findState();
-                determineWin();
             }
         }
     }
@@ -77,7 +77,6 @@ const gameStartUp = () => {
     restart.onclick = () => {
         location.reload();
     }
-
 }
 
 window.onload = gameStartUp;
