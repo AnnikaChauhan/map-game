@@ -1,0 +1,11 @@
+language: node_js
+
+deploy: 
+  provider: pages
+  # makes faster
+  skip_cleanup: true
+  # when and how you deploy it
+  keep_history: true
+  github_token: e924491d59b3398ddc78f46c5d10b91607184fef
+  on: 
+    branch: master
