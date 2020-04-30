@@ -48,10 +48,11 @@ p {
 
 #container {
     position: relative;
-    width: 1000px;
-    height: 600px;
-    padding: 10px;
     margin: auto;
+
+    svg {
+        width: 100vw;
+    }
 }
 
 .state {
@@ -79,4 +80,18 @@ section {
 footer {
     font-weight: bold;
     text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .intro {
+        flex-direction: column;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    #restart {
+        width: 100%;
+    }
 }

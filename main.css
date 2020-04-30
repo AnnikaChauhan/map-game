@@ -57,10 +57,11 @@ p {
 
 #container {
   position: relative;
-  width: 1000px;
-  height: 600px;
-  padding: 10px;
   margin: auto;
+}
+
+#container svg {
+  width: 100vw;
 }
 
 .state {
@@ -88,5 +89,20 @@ section {
 footer {
   font-weight: bold;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .intro input {
+    width: 100%;
+  }
+  #restart {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
